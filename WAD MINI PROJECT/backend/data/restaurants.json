@@ -1,0 +1,101 @@
+[
+  {
+    "id": "amber-courtyard",
+    "name": "Amber Courtyard",
+    "cuisine": "North Indian",
+    "location": "Mumbai",
+    "neighborhood": "Bandra West",
+    "rating": 4.8,
+    "priceBand": "$$$",
+    "hero": "Courtyard dinners, live tandoor aromas, and festive group tables.",
+    "description": "Amber Courtyard is built for celebrations, combining elegant North Indian classics with a breezy evening setting.",
+    "signatureDish": "Saffron Malai Broccoli",
+    "address": "12 Chapel Road, Bandra West, Mumbai",
+    "hours": "11:00 AM - 10:00 PM",
+    "imageLabel": "Terracotta courtyard with hanging lanterns",
+    "features": ["Outdoor seating", "Live grill", "Family tables", "Celebration cakes"],
+    "menuHighlights": [
+      { "name": "Dal Amber", "price": 420 },
+      { "name": "Tandoori Platter", "price": 980 },
+      { "name": "Rose Falooda Cheesecake", "price": 290 }
+    ],
+    "reviews": [
+      { "name": "Priya", "comment": "Perfect for birthdays and larger family dinners." },
+      { "name": "Arjun", "comment": "The service flow is fast even on busy evenings." }
+    ],
+    "tables": [
+      { "id": "A1", "seats": 2 },
+      { "id": "A2", "seats": 2 },
+      { "id": "A3", "seats": 4 },
+      { "id": "A4", "seats": 4 },
+      { "id": "A5", "seats": 6 },
+      { "id": "A6", "seats": 8 }
+    ]
+  },
+  {
+    "id": "harbor-plate",
+    "name": "Harbor Plate",
+    "cuisine": "Coastal Fusion",
+    "location": "Mumbai",
+    "neighborhood": "Colaba",
+    "rating": 4.7,
+    "priceBand": "$$$$",
+    "hero": "Chef-led seafood tasting menus with candlelit harbor views.",
+    "description": "Harbor Plate serves refined coastal plates, curated tasting menus, and private booth seating for special evenings.",
+    "signatureDish": "Konkan Chili Butter Prawns",
+    "address": "4 Dock View, Colaba, Mumbai",
+    "hours": "12:00 PM - 10:00 PM",
+    "imageLabel": "Open kitchen with blue stone bar",
+    "features": ["Chef's counter", "Date night", "Private booth", "Degustation menu"],
+    "menuHighlights": [
+      { "name": "Lobster Thermidor Toast", "price": 1180 },
+      { "name": "Konkan Butter Prawns", "price": 930 },
+      { "name": "Sea Salt Caramel Tart", "price": 340 }
+    ],
+    "reviews": [
+      { "name": "Nikhil", "comment": "The chef's counter experience is worth every rupee." },
+      { "name": "Rhea", "comment": "A polished place for date night and anniversaries." }
+    ],
+    "tables": [
+      { "id": "H1", "seats": 2 },
+      { "id": "H2", "seats": 2 },
+      { "id": "H3", "seats": 4 },
+      { "id": "H4", "seats": 4 },
+      { "id": "H5", "seats": 6 }
+    ]
+  },
+  {
+    "id": "sage-social",
+    "name": "Sage Social",
+    "cuisine": "Continental",
+    "location": "Mumbai",
+    "neighborhood": "Lower Parel",
+    "rating": 4.6,
+    "priceBand": "$$",
+    "hero": "Brunch energy, pastry bar indulgence, and easy group seating.",
+    "description": "Sage Social is a flexible all-day destination with comfort food, flatbreads, dessert boards, and collaborative seating.",
+    "signatureDish": "Truffle Mushroom Flatbread",
+    "address": "9 Mill Street, Lower Parel, Mumbai",
+    "hours": "10:00 AM - 10:00 PM",
+    "imageLabel": "Modern cafe with soft green walls",
+    "features": ["Brunch", "Dessert counter", "Group dining", "Work lunch"],
+    "menuHighlights": [
+      { "name": "Truffle Flatbread", "price": 510 },
+      { "name": "Hot Honey Chicken Bowl", "price": 580 },
+      { "name": "Signature Pastry Flight", "price": 360 }
+    ],
+    "reviews": [
+      { "name": "Simran", "comment": "Great for casual lunches and team outings." },
+      { "name": "Karan", "comment": "The pastry bar makes it stand out from typical cafes." }
+    ],
+    "tables": [
+      { "id": "S1", "seats": 2 },
+      { "id": "S2", "seats": 2 },
+      { "id": "S3", "seats": 4 },
+      { "id": "S4", "seats": 4 },
+      { "id": "S5", "seats": 6 },
+      { "id": "S6", "seats": 6 },
+      { "id": "S7", "seats": 8 }
+    ]
+  }
+]

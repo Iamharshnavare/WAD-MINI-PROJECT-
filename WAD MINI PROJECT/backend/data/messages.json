@@ -1,0 +1,10 @@
+[
+  {
+    "id": "msg_seed_1",
+    "name": "Devika",
+    "email": "devika@example.com",
+    "subject": "Private dining",
+    "message": "Can you help us arrange a small engagement dinner for 16 guests next weekend?",
+    "createdAt": "2026-04-19T09:15:00.000Z"
+  }
+]

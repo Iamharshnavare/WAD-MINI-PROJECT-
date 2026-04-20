@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableTrail | Full-Stack Restaurant Booking Website</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="brand-mark">
+            <span class="brand-icon">TT</span>
+            <div>
+              <p class="eyebrow">Full-Stack Restaurant Platform</p>
+              <h1>TableTrail</h1>
+            </div>
+          </div>
+          <div class="top-links">
+            <a href="#restaurants">Restaurants</a>
+            <a href="#reservations">Reservations</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+
+        <section class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Restaurant discovery + booking + management</p>
+            <h2>A complete restaurant booking website for your mini project.</h2>
+            <p class="hero-text">
+              Guests can browse venues, check live slot availability, book tables, manage
+              reservations, and send inquiries. The backend stores bookings and messages while the
+              frontend updates live.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#reservations">Reserve a table</a>
+              <a class="secondary-button" href="#dashboard">View dashboard</a>
+            </div>
+            <div id="hero-stats" class="hero-stats"></div>
+          </div>
+
+          <aside class="hero-highlight">
+            <p class="spotlight-label">Featured tonight</p>
+            <h3 id="spotlight-name">Loading...</h3>
+            <p id="spotlight-hero"></p>
+            <div class="spotlight-meta">
+              <span id="spotlight-location"></span>
+              <span id="spotlight-rating"></span>
+            </div>
+            <ul id="spotlight-features" class="feature-list"></ul>
+            <div class="mini-panel">
+              <p class="mini-panel-title">What this website handles</p>
+              <ul class="capability-list">
+                <li>Live availability checks</li>
+                <li>Reservation creation</li>
+                <li>Status updates and cancellation</li>
+                <li>Contact message storage</li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+      </header>
+
+      <main>
+        <section id="restaurants" class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Discover</p>
+              <h3>Restaurant collection</h3>
+            </div>
+            <div class="filter-controls">
+              <label>
+                Cuisine
+                <select id="cuisine-filter">
+                  <option value="all">All cuisines</option>
+                </select>
+              </label>
+              <label>
+                Area
+                <select id="area-filter">
+                  <option value="all">All areas</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div id="restaurant-grid" class="restaurant-grid"></div>
+        </section>
+
+        <section id="reservations" class="section-block split-layout">
+          <div class="panel-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Book a table</p>
+              <h3>Reservation form</h3>
+            </div>
+            <form id="booking-form" class="form-grid">
+              <label>
+                Restaurant
+                <select id="restaurant-select" name="restaurantId" required></select>
+              </label>
+              <div class="field-row">
+                <label>
+                  Date
+                  <input id="date-input" name="date" type="date" required />
+                </label>
+                <label>
+                  Party size
+                  <input id="party-size-input" name="partySize" type="number" min="1" max="12" value="2" required />
+                </label>
+              </div>
+              <label>
+                Available time
+                <select id="time-select" name="time" required>
+                  <option value="">Choose a date first</option>
+                </select>
+              </label>
+              <div class="field-row">
+                <label>
+                  Customer name
+                  <input name="customerName" type="text" placeholder="Enter full name" required />
+                </label>
+                <label>
+                  Occasion
+                  <input name="occasion" type="text" placeholder="Birthday, dinner date..." />
+                </label>
+              </div>
+              <div class="field-row">
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="name@example.com" required />
+                </label>
+                <label>
+                  Phone
+                  <input name="phone" type="tel" placeholder="9876543210" required />
+                </label>
+              </div>
+              <label>
+                Special request
+                <textarea name="specialRequest" rows="3" placeholder="Window seating, allergy note, cake arrangement..."></textarea>
+              </label>
+              <button class="primary-button wide-button" type="submit">Confirm reservation</button>
+              <p id="booking-status" class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="stack-column">
+            <div class="panel-card">
+              <div class="panel-heading">
+                <p class="eyebrow">Manage</p>
+                <h3>Search reservations</h3>
+              </div>
+              <form id="search-form" class="form-grid compact-form">
+                <div class="field-row">
+                  <label>
+                    Email
+                    <input id="search-email" type="email" placeholder="Search by email" />
+                  </label>
+                  <label>
+                    Phone
+                    <input id="search-phone" type="text" placeholder="Search by phone" />
+                  </label>
+                </div>
+                <div class="field-row">
+                  <label>
+                    Status
+                    <select id="search-status">
+                      <option value="">All statuses</option>
+                      <option value="confirmed">Confirmed</option>
+                      <option value="seated">Seated</option>
+                      <option value="completed">Completed</option>
+                      <option value="cancelled">Cancelled</option>
+                    </select>
+                  </label>
+                  <label>
+                    Restaurant
+                    <select id="search-restaurant">
+                      <option value="">All restaurants</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="button-row">
+                  <button class="secondary-button" type="submit">Find bookings</button>
+                  <button class="ghost-button" id="reset-search-button" type="button">Reset</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-heading">
+                <p class="eyebrow">Live list</p>
+                <h3>Reservations</h3>
+              </div>
+              <div id="booking-list" class="booking-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="dashboard" class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Operations</p>
+              <h3>Admin dashboard</h3>
+            </div>
+          </div>
+          <div id="dashboard-grid" class="dashboard-grid"></div>
+          <div class="split-layout dashboard-lower">
+            <div class="panel-card">
+              <div class="panel-heading">
+                <p class="eyebrow">Recent activity</p>
+                <h3>Latest bookings</h3>
+              </div>
+              <div id="recent-bookings" class="booking-list"></div>
+            </div>
+            <div class="panel-card">
+              <div class="panel-heading">
+                <p class="eyebrow">Guest outreach</p>
+                <h3>Contact messages</h3>
+              </div>
+              <div id="message-list" class="message-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section-block split-layout">
+          <div class="contact-copy panel-card accent-card">
+            <p class="eyebrow">Support</p>
+            <h3>Plan an event or ask for a custom dining setup.</h3>
+            <p>
+              This contact section is also wired to the backend, so every inquiry gets stored in the
+              admin message list above.
+            </p>
+            <ul class="feature-list">
+              <li>Private dining</li>
+              <li>Corporate lunches</li>
+              <li>Birthday setups</li>
+              <li>Chef tasting requests</li>
+            </ul>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Contact form</p>
+              <h3>Send a message</h3>
+            </div>
+            <form id="contact-form" class="form-grid">
+              <div class="field-row">
+                <label>
+                  Name
+                  <input name="name" type="text" placeholder="Your name" required />
+                </label>
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="you@example.com" required />
+                </label>
+              </div>
+              <label>
+                Subject
+                <input name="subject" type="text" placeholder="Private dinner, event inquiry..." required />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+              </label>
+              <button class="primary-button wide-button" type="submit">Send message</button>
+              <p id="contact-status" class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "restaurant-booking-app",
+  "version": "1.0.0",
+  "description": "Full-stack restaurant booking web application",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  }
+}
