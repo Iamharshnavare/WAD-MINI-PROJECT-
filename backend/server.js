@@ -19,7 +19,7 @@ const {
   validateMessagePayload
 } = require("./lib/booking-service");
 
-const HOST = process.env.HOST || "127.0.0.1";
+const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 3000);
 const PUBLIC_DIR = path.join(__dirname, "..", "public");
 
@@ -106,6 +106,13 @@ function routeApi(request, response, parsedUrl) {
   if (request.method === "GET" && pathname === "/api/restaurants") {
     sendJson(response, 200, {
       restaurants: restaurants.map(normalizeRestaurant)
+    });
+    return true;
+  }
+
+  if (request.method === "GET" && pathname === "/health") {
+    sendJson(response, 200, {
+      status: "ok"
     });
     return true;
   }

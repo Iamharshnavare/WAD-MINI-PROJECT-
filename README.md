@@ -42,6 +42,34 @@ npm start
 
 Open `http://127.0.0.1:3000`
 
+## Deploy on Render
+
+This project is ready to deploy as a Node web service on Render.
+
+Important:
+
+- The app stores bookings and messages in local JSON files.
+- On Render, the filesystem is ephemeral by default, so data can reset on redeploy or restart.
+- For a demo deployment, this is usually fine.
+- For persistent data, use a Render persistent disk or move the data to a database.
+
+### Quick steps
+
+1. Push this repo to GitHub.
+2. Sign in to [Render](https://render.com/).
+3. Click `New` -> `Blueprint` or `New` -> `Web Service`.
+4. Connect the GitHub repo `Iamharshnavare/WAD-MINI-PROJECT-`.
+5. If using `Web Service`, use:
+   - Build Command: `npm install`
+   - Start Command: `npm start`
+6. Deploy and open the generated `onrender.com` URL.
+
+### Included config
+
+- `render.yaml` is included at the repo root.
+- Health check endpoint: `/health`
+- Server binds to `0.0.0.0` for cloud hosting
+
 ## Tech stack
 
 - Frontend: HTML, CSS, Vanilla JavaScript
