@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableTrail | Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="topbar">
+          <a class="brand-mark" href="/index.html">
+            <span class="brand-icon">TT</span>
+            <div>
+              <p class="eyebrow">Full-Stack Restaurant Platform</p>
+              <h1>TableTrail</h1>
+            </div>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="top-links">
+            <a href="/index.html">Home</a>
+            <a href="/restaurants.html">Restaurants</a>
+            <a href="/reservations.html">Reservations</a>
+            <a class="active" href="/dashboard.html">Dashboard</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="kicker">Dashboard page</p>
+          <h2>Track restaurant activity, inquiries, and reservation health.</h2>
+          <p>
+            A full admin-style page with summary cards, recent bookings, recent messages, and top
+            performing restaurants.
+          </p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Operations</p>
+              <h3>Admin dashboard</h3>
+            </div>
+          </div>
+          <div id="dashboard-grid" class="dashboard-grid"></div>
+        </section>
+
+        <section class="section-block split-layout">
+          <div class="panel-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Latest bookings</p>
+              <h3>Recent reservation activity</h3>
+            </div>
+            <div id="recent-bookings" class="booking-list"></div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Guest outreach</p>
+              <h3>Recent contact messages</h3>
+            </div>
+            <div id="message-list" class="message-list"></div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="panel-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Popularity</p>
+              <h3>Restaurant demand snapshot</h3>
+            </div>
+            <div id="popular-restaurants" class="feature-grid"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>The dashboard remains responsive and readable across laptop and mobile widths.</p>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

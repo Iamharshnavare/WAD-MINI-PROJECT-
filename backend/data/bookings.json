@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bk_seed_1",
+    "restaurantId": "harbor-plate",
+    "customerName": "Aarav Shah",
+    "email": "aarav@example.com",
+    "phone": "9988776655",
+    "date": "2026-04-21",
+    "time": "19:30",
+    "partySize": 2,
+    "occasion": "Anniversary",
+    "specialRequest": "Window booth if possible",
+    "status": "confirmed",
+    "tableId": "H1",
+    "createdAt": "2026-04-19T10:00:00.000Z"
+  },
+  {
+    "id": "bk_seed_2",
+    "restaurantId": "sage-social",
+    "customerName": "Meera Joshi",
+    "email": "meera@example.com",
+    "phone": "9123456780",
+    "date": "2026-04-22",
+    "time": "13:00",
+    "partySize": 5,
+    "occasion": "Team lunch",
+    "specialRequest": "",
+    "status": "confirmed",
+    "tableId": "S5",
+    "createdAt": "2026-04-19T14:30:00.000Z"
+  }
+]

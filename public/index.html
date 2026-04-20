@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableTrail | Home</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="topbar">
+          <a class="brand-mark" href="/index.html">
+            <span class="brand-icon">TT</span>
+            <div>
+              <p class="eyebrow">Full-Stack Restaurant Platform</p>
+              <h1>TableTrail</h1>
+            </div>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="top-links">
+            <a class="active" href="/index.html">Home</a>
+            <a href="/restaurants.html">Restaurants</a>
+            <a href="/reservations.html">Reservations</a>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="kicker">Multi-page restaurant booking website</p>
+              <h2>Browse, reserve, manage, and monitor dining experiences across every screen.</h2>
+              <p class="hero-text">
+                TableTrail is now structured like a proper website with separate pages for
+                restaurants, reservations, dashboard, and contact. It stays connected to the same
+                full-stack backend while adapting cleanly to laptop and mobile layouts.
+              </p>
+              <div class="hero-actions">
+                <a class="primary-button" href="/reservations.html">Book a table</a>
+                <a class="secondary-button" href="/restaurants.html">Explore restaurants</a>
+              </div>
+              <div id="hero-stats" class="hero-stats"></div>
+            </div>
+
+            <aside class="hero-highlight">
+              <p class="spotlight-label">Featured tonight</p>
+              <h3 id="spotlight-name">Loading...</h3>
+              <p id="spotlight-hero"></p>
+              <div class="spotlight-meta">
+                <span id="spotlight-location"></span>
+                <span id="spotlight-rating"></span>
+              </div>
+              <ul id="spotlight-features" class="feature-list"></ul>
+              <div class="mini-panel">
+                <p class="mini-panel-title">Website sections</p>
+                <ul class="capability-list">
+                  <li>Dedicated restaurant page</li>
+                  <li>Standalone booking page</li>
+                  <li>Separate dashboard view</li>
+                  <li>Independent contact page</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Navigate</p>
+              <h3>Move through the website</h3>
+            </div>
+          </div>
+
+          <div class="feature-grid">
+            <article class="info-card">
+              <p class="eyebrow">Restaurants</p>
+              <h4>View all venues</h4>
+              <p>Browse every restaurant with menu highlights, features, and filter options.</p>
+              <a class="text-link" href="/restaurants.html">Open restaurants page</a>
+            </article>
+            <article class="info-card">
+              <p class="eyebrow">Reservations</p>
+              <h4>Reserve and manage</h4>
+              <p>Book a table, search reservations, and update booking status from one place.</p>
+              <a class="text-link" href="/reservations.html">Open reservations page</a>
+            </article>
+            <article class="info-card">
+              <p class="eyebrow">Dashboard</p>
+              <h4>Track activity</h4>
+              <p>See totals, recent bookings, popular restaurants, and guest inquiries.</p>
+              <a class="text-link" href="/dashboard.html">Open dashboard page</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Process</p>
+              <h3>How the platform works</h3>
+            </div>
+          </div>
+
+          <div class="feature-grid">
+            <article class="info-card compact">
+              <p class="eyebrow">Step 1</p>
+              <h4>Browse venues</h4>
+              <p>Guests compare cuisines, neighborhoods, menu highlights, and dining features.</p>
+            </article>
+            <article class="info-card compact">
+              <p class="eyebrow">Step 2</p>
+              <h4>Check availability</h4>
+              <p>The reservations page pulls real-time slots from the backend using party size and date.</p>
+            </article>
+            <article class="info-card compact">
+              <p class="eyebrow">Step 3</p>
+              <h4>Manage operations</h4>
+              <p>Admins review bookings, update status, track inquiries, and monitor demand.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Preview</p>
+              <h3>Featured restaurants</h3>
+            </div>
+            <a class="secondary-button" href="/restaurants.html">See full collection</a>
+          </div>
+          <div id="home-featured-grid" class="restaurant-grid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Demand snapshot</p>
+              <h3>Popular right now</h3>
+            </div>
+            <a class="secondary-button" href="/dashboard.html">Open dashboard</a>
+          </div>
+          <div id="home-popular-grid" class="feature-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>TableTrail mini project website with responsive laptop and mobile layouts.</p>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

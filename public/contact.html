@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableTrail | Contact</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="contact">
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="topbar">
+          <a class="brand-mark" href="/index.html">
+            <span class="brand-icon">TT</span>
+            <div>
+              <p class="eyebrow">Full-Stack Restaurant Platform</p>
+              <h1>TableTrail</h1>
+            </div>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="top-links">
+            <a href="/index.html">Home</a>
+            <a href="/restaurants.html">Restaurants</a>
+            <a href="/reservations.html">Reservations</a>
+            <a href="/dashboard.html">Dashboard</a>
+            <a class="active" href="/contact.html">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="kicker">Contact page</p>
+          <h2>Send private dining, event, or custom dining requests.</h2>
+          <p>
+            Every inquiry is saved through the backend and appears in the dashboard for review.
+          </p>
+        </section>
+
+        <section class="section-block split-layout">
+          <div class="panel-card accent-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Support options</p>
+              <h3>What we can help with</h3>
+            </div>
+            <div class="feature-grid">
+              <article class="info-card compact">
+                <h4>Private dining</h4>
+                <p>Reserve sections for intimate celebrations and premium tasting menus.</p>
+              </article>
+              <article class="info-card compact">
+                <h4>Corporate events</h4>
+                <p>Arrange lunch service, team dinners, and branded hospitality evenings.</p>
+              </article>
+              <article class="info-card compact">
+                <h4>Special requests</h4>
+                <p>Coordinate cakes, decor, allergy handling, and custom chef interactions.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Message us</p>
+              <h3>Contact form</h3>
+            </div>
+            <form id="contact-form" class="form-grid">
+              <div class="field-row">
+                <label>
+                  Name
+                  <input name="name" type="text" placeholder="Your name" required />
+                </label>
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="you@example.com" required />
+                </label>
+              </div>
+              <label>
+                Subject
+                <input name="subject" type="text" placeholder="Private dinner, event inquiry..." required />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+              </label>
+              <button class="primary-button wide-button" type="submit">Send message</button>
+              <p id="contact-status" class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="feature-grid">
+            <article class="info-card compact">
+              <p class="eyebrow">Response time</p>
+              <h4>Usually within 24 hours</h4>
+              <p>Perfect for mini-project demos where you want to show a realistic guest support flow.</p>
+            </article>
+            <article class="info-card compact">
+              <p class="eyebrow">Use cases</p>
+              <h4>Events and celebrations</h4>
+              <p>Ideal for birthdays, corporate lunches, anniversary dinners, and custom seating plans.</p>
+            </article>
+            <article class="info-card compact">
+              <p class="eyebrow">Backend-linked</p>
+              <h4>Stored inquiries</h4>
+              <p>Every form submission is saved and can be reviewed later on the dashboard page.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Use the contact page on mobile or desktop and the request still reaches the same backend.</p>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

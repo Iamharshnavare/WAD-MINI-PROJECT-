@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableTrail | Restaurants</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="restaurants">
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="topbar">
+          <a class="brand-mark" href="/index.html">
+            <span class="brand-icon">TT</span>
+            <div>
+              <p class="eyebrow">Full-Stack Restaurant Platform</p>
+              <h1>TableTrail</h1>
+            </div>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="top-links">
+            <a href="/index.html">Home</a>
+            <a class="active" href="/restaurants.html">Restaurants</a>
+            <a href="/reservations.html">Reservations</a>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="kicker">Restaurants page</p>
+          <h2>Find the right dining experience for every plan.</h2>
+          <p>
+            Browse the collection, filter by cuisine and neighborhood, and jump directly to the
+            reservation page for any venue.
+          </p>
+        </section>
+
+        <section class="section-block">
+          <div id="restaurant-stats" class="metric-strip"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Discover</p>
+              <h3>Restaurant collection</h3>
+            </div>
+            <div class="filter-controls">
+              <label>
+                Cuisine
+                <select id="cuisine-filter">
+                  <option value="all">All cuisines</option>
+                </select>
+              </label>
+              <label>
+                Area
+                <select id="area-filter">
+                  <option value="all">All areas</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div id="restaurant-grid" class="restaurant-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Ready to reserve? Head to the reservations page to lock in a table.</p>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

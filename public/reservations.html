@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableTrail | Reservations</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="reservations">
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="topbar">
+          <a class="brand-mark" href="/index.html">
+            <span class="brand-icon">TT</span>
+            <div>
+              <p class="eyebrow">Full-Stack Restaurant Platform</p>
+              <h1>TableTrail</h1>
+            </div>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="top-links">
+            <a href="/index.html">Home</a>
+            <a href="/restaurants.html">Restaurants</a>
+            <a class="active" href="/reservations.html">Reservations</a>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="kicker">Reservations page</p>
+          <h2>Book a table and manage reservations from a dedicated screen.</h2>
+          <p>
+            This page uses the backend for availability checks, reservation creation, booking search,
+            status updates, and cancellation.
+          </p>
+        </section>
+
+        <section class="section-block split-layout">
+          <div class="panel-card">
+            <div class="panel-heading">
+              <p class="eyebrow">Book a table</p>
+              <h3>Reservation form</h3>
+            </div>
+            <form id="booking-form" class="form-grid">
+              <label>
+                Restaurant
+                <select id="restaurant-select" name="restaurantId" required></select>
+              </label>
+              <div class="field-row">
+                <label>
+                  Date
+                  <input id="date-input" name="date" type="date" required />
+                </label>
+                <label>
+                  Party size
+                  <input id="party-size-input" name="partySize" type="number" min="1" max="12" value="2" required />
+                </label>
+              </div>
+              <label>
+                Available time
+                <select id="time-select" name="time" required>
+                  <option value="">Choose a date first</option>
+                </select>
+              </label>
+              <div class="field-row">
+                <label>
+                  Customer name
+                  <input name="customerName" type="text" placeholder="Enter full name" required />
+                </label>
+                <label>
+                  Occasion
+                  <input name="occasion" type="text" placeholder="Birthday, dinner date..." />
+                </label>
+              </div>
+              <div class="field-row">
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="name@example.com" required />
+                </label>
+                <label>
+                  Phone
+                  <input name="phone" type="tel" placeholder="9876543210" required />
+                </label>
+              </div>
+              <label>
+                Special request
+                <textarea name="specialRequest" rows="3" placeholder="Window seating, allergy note, cake arrangement..."></textarea>
+              </label>
+              <button class="primary-button wide-button" type="submit">Confirm reservation</button>
+              <p id="booking-status" class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="stack-column">
+            <div class="panel-card accent-card">
+              <div class="panel-heading">
+                <p class="eyebrow">Selected venue</p>
+                <h3 id="selected-restaurant-name">Choose a restaurant</h3>
+              </div>
+              <p id="selected-restaurant-meta" class="helper-copy">
+                Pick a venue to see a quick summary before booking.
+              </p>
+              <ul id="selected-restaurant-features" class="feature-list"></ul>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-heading">
+                <p class="eyebrow">Manage</p>
+                <h3>Search reservations</h3>
+              </div>
+              <form id="search-form" class="form-grid compact-form">
+                <div class="field-row">
+                  <label>
+                    Email
+                    <input id="search-email" type="email" placeholder="Search by email" />
+                  </label>
+                  <label>
+                    Phone
+                    <input id="search-phone" type="text" placeholder="Search by phone" />
+                  </label>
+                </div>
+                <div class="field-row">
+                  <label>
+                    Status
+                    <select id="search-status">
+                      <option value="">All statuses</option>
+                      <option value="confirmed">Confirmed</option>
+                      <option value="seated">Seated</option>
+                      <option value="completed">Completed</option>
+                      <option value="cancelled">Cancelled</option>
+                    </select>
+                  </label>
+                  <label>
+                    Restaurant
+                    <select id="search-restaurant">
+                      <option value="">All restaurants</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="button-row">
+                  <button class="secondary-button" type="submit">Find bookings</button>
+                  <button class="ghost-button" id="reset-search-button" type="button">Reset</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-heading">
+                <p class="eyebrow">Live list</p>
+                <h3>Reservations</h3>
+              </div>
+              <div id="booking-list" class="booking-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="feature-grid">
+            <article class="info-card compact">
+              <p class="eyebrow">Booking tip</p>
+              <h4>Best slot accuracy</h4>
+              <p>Availability changes with party size, so choose guest count before selecting a time.</p>
+            </article>
+            <article class="info-card compact">
+              <p class="eyebrow">Management</p>
+              <h4>Search by guest</h4>
+              <p>Use email or phone in the search panel to quickly locate and update reservations.</p>
+            </article>
+            <article class="info-card compact">
+              <p class="eyebrow">Operations</p>
+              <h4>Status tracking</h4>
+              <p>Confirmed, completed, and cancelled states are synced back to the backend data.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Search and manage bookings from any device with the same backend data source.</p>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
