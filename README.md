@@ -70,6 +70,19 @@ Important:
 - Health check endpoint: `/health`
 - Server binds to `0.0.0.0` for cloud hosting
 
+## Deploy on Vercel
+
+This repo also includes `vercel.json` and a catch-all function in `api/[...route].js`.
+
+Important for Vercel:
+
+- Vercel functions run through the `/api` directory.
+- The app now adapts the backend server logic into a Vercel function handler.
+- Vercel functions have a read-only filesystem except for writable `/tmp`, so the app uses `/tmp/tabletrail-data` on Vercel.
+- That means bookings and messages can work for demo purposes, but they are not guaranteed to persist long-term across deployments or cold starts.
+
+If you need permanent production data on Vercel, move bookings and messages to a database.
+
 ## Tech stack
 
 - Frontend: HTML, CSS, Vanilla JavaScript

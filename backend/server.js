@@ -350,8 +350,9 @@ function routeStatic(response, pathname) {
   });
 }
 
-const server = http.createServer((request, response) => {
-  const parsedUrl = new URL(request.url, `http://${request.headers.host}`);
+function handleRequest(request, response) {
+  const host = request.headers.host || "localhost";
+  const parsedUrl = new URL(request.url, `http://${host}`);
 
   if (parsedUrl.pathname.startsWith("/api/")) {
     const handled = routeApi(request, response, parsedUrl);
@@ -362,7 +363,9 @@ const server = http.createServer((request, response) => {
   }
 
   routeStatic(response, parsedUrl.pathname);
-});
+}
+
+const server = http.createServer(handleRequest);
 
 if (require.main === module) {
   server.listen(PORT, HOST, () => {
@@ -371,5 +374,6 @@ if (require.main === module) {
 }
 
 module.exports = {
+  handleRequest,
   server
 };
